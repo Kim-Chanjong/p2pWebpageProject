@@ -28,15 +28,20 @@ public class HomeController {
 	@Autowired
 	private SqlSession sqlSession;
 	
+	@RequestMapping("/")
+	public String home(Locale locale, Model model) {
+		System.out.println("프로젝트가 실행될 때 최초 요청을 받는 메소드");
+		return "home";		// return "list"; -> return "home";
+	}
+	
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 		public String index() {
 		return "index";
 	}
 	
-	@RequestMapping("/")
-	public String home(Locale locale, Model model) {
-		System.out.println("프로젝트가 실행될 때 최초 요청을 받는 메소드");
-		return "home";		// return "list"; -> return "home";
+	@RequestMapping(value = "/list2", method = RequestMethod.GET)
+	public String list2() {
+	return "list2";
 	}
 	
 	@RequestMapping("/uploadPage")
