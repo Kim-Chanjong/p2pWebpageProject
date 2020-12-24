@@ -18,8 +18,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.koreait.service.InsertService;
+import com.koreait.dao.MybatisDAO;
 import com.koreait.service.MemberService;
+import com.koreait.vo.MemberVO;
 
 @Controller
 public class HomeController {
@@ -97,14 +98,20 @@ public class HomeController {
 	
 	@RequestMapping("/insertOK")
 	public String insertOK(HttpServletRequest request, Model model) {
-		System.out.println("컨트롤러의 insertOK() 메소드 실행 - Model 인터페이스 객체 사용");
+		System.out.println("컨트롤러의 insertOK() 메소드 실행");
 	
-		model.addAttribute("request", request);
-		
+		MybatisDAO mapper = sqlSession.getMapper(MybatisDAO.class);
+
 		AbstractApplicationContext ctx = new GenericXmlApplicationContext("classpath:applicationCTX.xml");
-		MemberService service = ctx.getBean("insert", InsertService.class);
-		service.execute(model);
+		MemberVO memberVO = ctx.getBean("memberVO", MemberVO.class);	
 		
+		memberVO.setId(request.getParameter("id"));
+		memberVO.setPasswd(request.getParameter("passwd"));
+		memberVO.setNickname(request.getParameter("nickname"));
+		memberVO.setEmail(request.getParameter("email"));
+		
+		mapper.insert(memberVO);
+
 		return "login";
 	}
 	
