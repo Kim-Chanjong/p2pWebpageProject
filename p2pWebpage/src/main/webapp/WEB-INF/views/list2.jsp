@@ -16,8 +16,18 @@
 	<div class="container">
 		<div class="table-responsive">
 			<table class="table table-striped table-sm"></table>
-			<div >
-				<button type="button" class="btn btn-sm btn-primary" id="btnWriteForm">글쓰기</button>
+			<div>
+				<button type="button" class="btn btn-sm btn-primary" id="btnWriteForm" onclick="location.href='uploadPage'">글쓰기</button>
+			</div>
+		</div>
+	</div>
+</article>
+<article>
+	<div class="container">
+		<div class="table-responsive">
+			<table class="table table-striped table-sm"></table>
+			<div>
+				<button type="button" class="btn btn-sm btn-primary" id="home" onclick="location.href='index'">홈으로</button>
 			</div>
 		</div>
 	</div>

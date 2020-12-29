@@ -82,8 +82,8 @@ public class HomeController {
 				}
 			}
 		}
-		model.addAttribute("list", list);
-		return "list";
+		model.addAttribute("list2", list);
+		return "list2";
 	}
 	
 	@RequestMapping("/login")
@@ -97,9 +97,6 @@ public class HomeController {
 		System.out.println("컨트롤러의 insert() 메소드 실행");
 		return "insert";
 	}
-	
-
-
 	
 	@RequestMapping("/insertOK")
 	public String insertOK(HttpServletRequest request, Model model) {

@@ -44,6 +44,9 @@
             <a class="nav-link" href="index.html">홈</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="mypage.html">내 정보</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="list2.html">게시판</a>
           </li>
           <li class="nav-item">
