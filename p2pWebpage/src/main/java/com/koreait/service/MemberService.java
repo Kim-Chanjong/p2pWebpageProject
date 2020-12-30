@@ -1,9 +1,14 @@
 package com.koreait.service;
 
-import org.springframework.ui.Model;
+import javax.servlet.http.HttpSession;
+
+import com.koreait.vo.MemberVO;
 
 public interface MemberService {
-	
-	public abstract void execute(Model model);
 
+		//로그인 체크
+		public boolean loginCheck(MemberVO vo,HttpSession session);
+		
+		//로그 아웃
+		public void logout(HttpSession session);
 }
