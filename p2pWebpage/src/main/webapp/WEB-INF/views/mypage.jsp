@@ -2,13 +2,12 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
+<%@ include file="include/mainNav.jsp"%>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 
-    <%@ include file="../common/menubar.jsp"%>
     
     <div class="outer">
         <br>
@@ -18,27 +17,32 @@
             <table>
                 <tr>
                     <td width="200px">* 아이디</td>
-                    <td><input type="text" name="userId" value="<%= id %>" readonly></td>
+                    <td><input type="text" name="userId" value="id" readonly></td>
                     <td width="200px"></td>
                 </tr>
                 <tr>
                     <td>* 이름</td>
-                    <td><input type="text" name="userName" value="<%= userName %>" required></td>
+                    <td><input type="text" name="userName" value="userName" required></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>연락처</td>
-                    <td><input type="tel" name="phone" value="<%= phone %>" placeholder="(-없이)01012345678"></td>
+                    <td><input type="tel" name="phone" value="phone" placeholder="(-없이)01012345678"></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>이메일</td>
-                    <td><input type="email" name="email" value="<%= email %>"></td>
+                    <td><input type="email" name="email" value="email"></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>주소</td>
-                    <td><input type="text" name="address" value="<%= address %>"></td>
+                    <td><input type="text" name="address" value="address"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td><input type="text" name="password" value="****"></td>
                     <td></td>
                 </tr>
                 <%-- <tr>
